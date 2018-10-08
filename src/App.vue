@@ -1,13 +1,32 @@
 <template>
   <div id="app">
-    <img alt="Mortgate Calculator logo" src="./assets/mortgage-unsplash-xs.jpg">
+    <p>
+    <!-- use router-link component for navigation. -->
+    <!-- specify the link by passing the `to` prop. -->
+    <!-- `<router-link>` will be rendered as an `<a>` tag by default -->
+    <router-link to="/calculate">Calculate</router-link> |
+    <router-link to="/about">About</router-link>
+  </p>
+  <!-- route outlet -->
+  <!-- component matched by the route will render here -->
+  <router-view></router-view>
+    <img alt="Mortgage Calculator logo" src="./assets/mortgage-unsplash-xs.jpg">
+
   </div>
 </template>
 
 <script>
+import Home from './components/Home.vue'
+import About from './components/About.vue'
+import Calculate from './components/Calculate.vue'
 
 export default {
-  name: 'app'
+  name: 'app',
+  components: {
+    Home,
+    Calculate,
+    About
+  }
 }
 </script>
 
