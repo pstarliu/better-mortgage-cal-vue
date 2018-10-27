@@ -1,13 +1,12 @@
-
 <template>
-  <div id="app">
+  <b-container>
     <p>
       <app-header></app-header>
-  </p>
-  <!-- route outlet -->
-  <!-- component matched by the route will render here -->
-  <router-view></router-view>
-  </div>
+    </p>
+    <!-- route outlet -->
+    <!-- component matched by the route will render here -->
+    <router-view></router-view>
+  </b-container>
 </template>
 
 <script>
