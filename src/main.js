@@ -13,6 +13,20 @@ Vue.use(BootstrapVue);
 
 Vue.config.productionTip = false
 
+Vue.filter('toCurrency', function (value) {
+    if (typeof value !== "number") {
+        return value;
+    }
+    // Default would be en-US, and USD I guess
+    // but are are default to NZD instead
+    var formatter = new Intl.NumberFormat('en-NZ', {
+        style: 'currency',
+        currency: 'NZD',
+        minimumFractionDigits: 0
+    });
+    return formatter.format(value);
+});
+
 const router = new VueRouter({
   mode: 'history',
   routes
