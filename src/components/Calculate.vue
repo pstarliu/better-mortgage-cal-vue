@@ -36,7 +36,7 @@
     </b-form-group>
     
     <b-form-group id="loanTermGrp"
-		  label="Loan Term:"
+		  label="Loan Term (Years):"
 		  label-for="txbLoanTerm">
       <b-form-input id="txbLoanTerm"
 		    type="number"
