@@ -78,9 +78,14 @@ export default{
     data() {
         return {
 	    calculated: false,
+	    // Popular banks by Assets size
             bankOptions: [
                 {text: 'ANZ', vaule: "ANZ"},
+		{text: 'ASB', vaule: "ASB"},
+		{text: 'Bank of New Zealand', value: "BNZ"},
                 {text:'Kiwi', value: "KIWI"},
+		{text: 'Robobank', value: "ROBOBANK"},
+		{text: 'TSB Bank', value: "TSB"},
                 {text:'Westpac', value: "WESTPAC"}
             ],
             bankSelection: "",
