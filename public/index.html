@@ -6,6 +6,20 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.png">
     <title>better-mortgage-cal-vue</title>
+    
+    <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+	  apiKey: "AIzaSyBRHOYV07pvQaS43qbG9CNJutFwnW6Tv70",
+	  authDomain: "better-morgate-cal.firebaseapp.com",
+	  databaseURL: "https://better-morgate-cal.firebaseio.com",
+	  projectId: "better-morgate-cal",
+	  storageBucket: "better-morgate-cal.appspot.com",
+	  messagingSenderId: "1014458930263"
+      };
+      firebase.initializeApp(config);
+    </script>
   </head>
   <body>
     <noscript>
