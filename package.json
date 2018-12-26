@@ -2,13 +2,19 @@
   "name": "better-mortgage-cal-vue",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://pstarliu.github.io/better-mortgage-cal-vue/",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@babel/core": "^7.2.2",
     "bootstrap-vue": "^2.0.0-rc.11",
+    "gh-pages": "^2.0.1",
+    "jquery": "^3.3.1",
     "vue": "^2.5.17",
     "vue-router": "^3.0.1"
   },

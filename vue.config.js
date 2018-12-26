@@ -20,5 +20,8 @@ module.exports = {
               }
           return options
         })
-  }
+  },
+  baseUrl: process.env.NODE_ENV === 'production'
+    ? '/better-mortgage-cal-vue/'
+    : '/'
 }
