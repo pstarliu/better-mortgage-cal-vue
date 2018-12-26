@@ -16,7 +16,7 @@ npm run serve
 npm run build
 ```
 
-### Run on GitHub Pages
+### Push to GitHub Pages
 ```
 npm run deploy
 ```
