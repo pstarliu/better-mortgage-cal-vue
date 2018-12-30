@@ -29,7 +29,8 @@ Vue.filter('toCurrency', function (value) {
 
 const router = new VueRouter({
   mode: 'history',
-  routes
+  routes,
+  base: '/better-mortgage-cal-vue/'
 });
 
 new Vue({
