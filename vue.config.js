@@ -21,7 +21,6 @@ module.exports = {
           return options
         })
   },
-  baseUrl: process.env.NODE_ENV === 'production'
-    ? '/better-mortgage-cal-vue/'
-    : '/'
+  // It was needed for Github pages
+  //baseUrl: '/better-mortgage-cal-vue/'
 }
