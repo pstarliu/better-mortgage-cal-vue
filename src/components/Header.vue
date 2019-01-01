@@ -21,8 +21,8 @@
       
       <b-nav-item-dropdown text="Lang" right disabled>
         <b-dropdown-item href="#">EN</b-dropdown-item>
-        <b-dropdown-item href="#">ZH</b-dropdown-item>
-      </b-nav-item-dropdown>
+        <b-dropdown-item href="#">ZH</b-dropdown-item> 
+     </b-nav-item-dropdown>
 
       <b-nav-item href="#" @click="authorGoogle">SignInGoogle</b-nav-item>
 
@@ -44,6 +44,8 @@
 </template>
 
 <script>
+  import firebase from 'firebase';
+ 
 export default {
   data() {
     return {
@@ -56,23 +58,17 @@ export default {
       var provider = new firebase.auth.FacebookAuthProvider();
       firebase.auth().signInWithPopup(provider).then(result => {
         // This gives you a Facebook Access Token. You can use it to access the Facebook API.
-        var token = result.credential.accessToken;
+        //var token = result.credential.accessToken;
         // The signed-in user info.
         var user = result.user;
         // The signed-in user info.
         this.userName = user.displayName;
-        let tempUserName = user.displayName;
         this.isAuthorized = true;        
       })
         .catch(error => {
           // Handle Errors here.
           var errorCode = error.code;
           var errorMessage = error.message;
-          // The email of the user's account used.x
-          var email = error.email;
-          // The firebase.auth.AuthCredential type that was used.
-          var credential = error.credential;
-          // ...
           if (console) {
             console.log("Sign in error, ", errorCode, errorMessage);
           }
@@ -86,11 +82,10 @@ export default {
         .signInWithPopup(provider)
         .then(result => {
           // This gives you a Google Access Token. You can use it to access the Google API.
-          var token = result.credential.accessToken;
+          //var token = result.credential.accessToken;
           var user = result.user;
           // The signed-in user info.
           this.userName = user.displayName;
-          let tempUserName = user.displayName;
           this.isAuthorized = true;
         })
         .catch(error => {
@@ -98,9 +93,6 @@ export default {
           var errorCode = error.code;
           var errorMessage = error.message;
           // The email of the user's account used.
-          var email = error.email;
-          // The firebase.auth.AuthCredential type that was used.
-          var credential = error.credential;
           console.log("Sign in error, ", errorCode, errorMessage);
         });
     },
@@ -121,11 +113,6 @@ export default {
           // Handle Errors here.
           var errorCode = error.code;
           var errorMessage = error.message;
-          // The email of the user's account used.
-          var email = error.email;
-          // The firebase.auth.AuthCredential type that was used.
-          var credential = error.credential;
-          i
           console.log("Error: " + errorCode + ", " + errorMessage);
         });
     }
