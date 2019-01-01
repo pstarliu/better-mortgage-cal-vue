@@ -54,7 +54,7 @@ export default {
   methods: {
     authorFacebook() {
       var provider = new firebase.auth.FacebookAuthProvider();
-      firebase.auth().signInWithPopup(provider).then(function(result) {
+      firebase.auth().signInWithPopup(provider).then(result => {
         // This gives you a Facebook Access Token. You can use it to access the Facebook API.
         var token = result.credential.accessToken;
         // The signed-in user info.
@@ -64,7 +64,7 @@ export default {
         let tempUserName = user.displayName;
         this.isAuthorized = true;        
       })
-        .catch(function(error) {
+        .catch(error => {
           // Handle Errors here.
           var errorCode = error.code;
           var errorMessage = error.message;
@@ -93,7 +93,7 @@ export default {
           let tempUserName = user.displayName;
           this.isAuthorized = true;
         })
-        .catch(function(error) {
+        .catch(error => {
           // Handle Errors here.
           var errorCode = error.code;
           var errorMessage = error.message;
