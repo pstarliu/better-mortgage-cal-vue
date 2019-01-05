@@ -1,5 +1,5 @@
 # better-mortgage-cal-vue
-A simple and user friendly mortgage Calculator written by Vue.js. Being a web application means it can be more than just a calculator which is ubiquitous by now.
+A simple and user friendly mortgage calculator written by Vue.js. Being a web application means it can be more than just a calculator which is ubiquitous by now.
 
 ## Project setup
 ```
