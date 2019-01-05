@@ -8,6 +8,7 @@ import BootstrapVue from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import firebase from 'firebase'
+import * as Sentry from '@sentry/browser'
 
 Vue.use(VueRouter);
 Vue.use(BootstrapVue);
@@ -27,6 +28,11 @@ Vue.filter('toCurrency', function (value) {
     });
     return formatter.format(value);
 });
+
+Sentry.init({
+  dsn: 'https://b6741af7be5e462a942474db654c102f@sentry.io/1364817',
+  integrations: [new Sentry.Integrations.Vue({ Vue })]
+})
 
 const router = new VueRouter({
   mode: 'history',

@@ -68,14 +68,15 @@ export default {
         var user = result.user;
         this.userName = user.displayName;
         this.isAuthorized = true;        
-      }).catch(function(error) {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        if (console) {
-          console.log("Sign in error, ", errorCode, errorMessage);
-        }
       });
+        // .catch(function(error) {
+      //   // Handle Errors here.
+      //   var errorCode = error.code;
+      //   var errorMessage = error.message;
+      //   if (console) {
+      //     console.log("Sign in error, ", errorCode, errorMessage);
+      //   }
+      // });
     },
     
     authorFacebook() {
@@ -88,15 +89,15 @@ export default {
         // The signed-in user info.
         this.userName = user.displayName;
         this.isAuthorized = true;        
-      })
-        .catch(error => {
-          // Handle Errors here.
-          var errorCode = error.code;
-          var errorMessage = error.message;
-          if (console) {
-            console.log("Sign in error, ", errorCode, errorMessage);
-          }
-        });      
+      });
+        // .catch(error => {
+        //   // Handle Errors here.
+        //   var errorCode = error.code;
+        //   var errorMessage = error.message;
+        //   if (console) {
+        //     console.log("Sign in error, ", errorCode, errorMessage);
+        //   }
+        // });      
     },
     
     authorGoogle() {
@@ -111,14 +112,14 @@ export default {
           // The signed-in user info.
           this.userName = user.displayName;
           this.isAuthorized = true;
-        })
-        .catch(error => {
-          // Handle Errors here.
-          var errorCode = error.code;
-          var errorMessage = error.message;
-          // The email of the user's account used.
-          console.log("Sign in error, ", errorCode, errorMessage);
         });
+        // .catch(error => {
+        //   // Handle Errors here.
+        //   var errorCode = error.code;
+        //   var errorMessage = error.message;
+        //   // The email of the user's account used.
+        //   console.log("Sign in error, ", errorCode, errorMessage);
+        // });
     },
     signOut() {
       firebase
@@ -128,17 +129,16 @@ export default {
           // Sign-out successful.
           this.isAuthorized = false;
           this.userName = "Not Sign In";
-          console.log("sign out successfull");
-        })
-        .catch(function(error) {
-          // An error happened.
-          this.isAuthorized = false;
-          this.userName = "Not Sign In";
-          // Handle Errors here.
-          var errorCode = error.code;
-          var errorMessage = error.message;
-          console.log("Error: " + errorCode + ", " + errorMessage);
         });
+        // .catch(function(error) {
+        //   // An error happened.
+        //   this.isAuthorized = false;
+        //   this.userName = "Not Sign In";
+        //   // Handle Errors here.
+        //   var errorCode = error.code;
+        //   var errorMessage = error.message;
+        //   console.log("Error: " + errorCode + ", " + errorMessage);
+        // });
     }
   }
 };
