@@ -27,6 +27,8 @@
       <b-nav-item href="#" @click="authorGoogle">SignInGoogle</b-nav-item>
 
       <b-nav-item href="#" @click="authorFacebook">SignInFacebook</b-nav-item>
+
+      <b-nav-item href="#" @click="authorTwitter">SignInTwitter</b-nav-item>
       
       <b-nav-item-dropdown right>
 	<!-- <button type="button">{{ userName }}</button> -->
@@ -54,6 +56,28 @@ export default {
     };
   },
   methods: {
+    
+    authorTwitter() {
+      var provider = new firebase.auth.TwitterAuthProvider();
+      firebase.auth().signInWithPopup(provider).then( result => {
+        // This gives you a the Twitter OAuth 1.0 Access Token and Secret.
+        // You can use these server side with your app's credentials to access the Twitter API.
+        //var token = result.credential.accessToken;
+        //var secret = result.credential.secret;
+        // The signed-in user info.
+        var user = result.user;
+        this.userName = user.displayName;
+        this.isAuthorized = true;        
+      }).catch(function(error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        if (console) {
+          console.log("Sign in error, ", errorCode, errorMessage);
+        }
+      });
+    },
+    
     authorFacebook() {
       var provider = new firebase.auth.FacebookAuthProvider();
       firebase.auth().signInWithPopup(provider).then(result => {
