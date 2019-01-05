@@ -7,7 +7,7 @@
   <b-navbar-brand to="/">
     <img src="../assets/logo.png" style="height:35px;" alt="house">
   </b-navbar-brand>
-
+  
   <b-collapse is-nav id="nav_collapse">
     
     <b-navbar-nav>
@@ -22,10 +22,15 @@
       <b-nav-item-dropdown text="Lang" right disabled>
         <b-dropdown-item href="#">EN</b-dropdown-item>
         <b-dropdown-item href="#">ZH</b-dropdown-item> 
-     </b-nav-item-dropdown>
-
+      </b-nav-item-dropdown>
+      
+      <b-nav-item-dropdown text="SignIn/SignUp" right>
+        <b-nav-item to="/signin">Sign In</b-nav-item>
+        <b-nav-item to="/signup">Sign Up</b-nav-item>
+      </b-nav-item-dropdown>            
+      
       <b-nav-item href="#" @click="authorGoogle">SignInGoogle</b-nav-item>
-
+      
       <b-nav-item href="#" @click="authorFacebook">SignInFacebook</b-nav-item>
 
       <b-nav-item href="#" @click="authorTwitter">SignInTwitter</b-nav-item>
@@ -56,6 +61,9 @@ export default {
     };
   },
   methods: {
+    authorEmail() {
+      
+    },
     
     authorTwitter() {
       var provider = new firebase.auth.TwitterAuthProvider();
