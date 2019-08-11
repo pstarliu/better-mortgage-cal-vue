@@ -20,7 +20,7 @@ Vue.filter('toCurrency', function (value) {
         return value;
     }
     // Default would be en-US, and USD I guess
-    // but are are default to NZD instead
+    // but we are default to NZD instead
     var formatter = new Intl.NumberFormat('en-NZ', {
         style: 'currency',
         currency: 'NZD',
