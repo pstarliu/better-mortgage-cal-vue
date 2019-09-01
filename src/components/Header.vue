@@ -13,6 +13,7 @@
     <b-navbar-nav>
       <b-nav-item to="/calculate">Calculate</b-nav-item>
       <b-nav-item to="/privacy">Privacy Policy</b-nav-item>
+      <b-nav-item to="/termofservice">Term of Service</b-nav-item>
       <b-nav-item to="/about">About</b-nav-item>
     </b-navbar-nav>
     
@@ -29,11 +30,11 @@
         <b-nav-item to="/signup">Sign Up</b-nav-item>
       </b-nav-item-dropdown>            
       
-      <b-nav-item href="#" @click="authorGoogle">SignInGoogle</b-nav-item>
+      <b-nav-item href="#" @click="authorGoogle">SignIn Google</b-nav-item>
       
-      <b-nav-item href="#" @click="authorFacebook">SignInFacebook</b-nav-item>
+      <b-nav-item href="#" @click="authorFacebook">SignIn Facebook</b-nav-item>
 
-      <b-nav-item href="#" @click="authorTwitter">SignInTwitter</b-nav-item>
+      <b-nav-item href="#" @click="authorTwitter">SignIn Twitter</b-nav-item>
       
       <b-nav-item-dropdown right>
 	<!-- <button type="button">{{ userName }}</button> -->
